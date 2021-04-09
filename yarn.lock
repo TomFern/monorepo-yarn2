@@ -307,6 +307,12 @@ __metadata:
   languageName: node
   linkType: hard
 
+"monorepo-yarn2@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "monorepo-yarn2@workspace:."
+  languageName: unknown
+  linkType: soft
+
 "morgan@npm:~1.9.1":
   version: 1.9.1
   resolution: "morgan@npm:1.9.1"
@@ -499,9 +505,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"web@workspace:.":
+"web@workspace:web":
   version: 0.0.0-use.local
-  resolution: "web@workspace:."
+  resolution: "web@workspace:web"
   dependencies:
     cookie-parser: ~1.4.4
     debug: ~2.6.9

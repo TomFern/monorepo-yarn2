@@ -1,7 +1,10 @@
 {
   "name": "monorepo-yarn2",
+  "scripts": {
+    "web": "yarn workspace web start"
+  },
   "workspaces": [
-      "api",
-      "web"
+    "web",
+    "api"
   ]
 }

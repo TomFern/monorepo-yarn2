@@ -19,14 +19,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     ],
     "dependencyTreeRoots": [
       {
-        "name": "web",
+        "name": "monorepo-yarn2",
         "reference": "workspace:."
+      },
+      {
+        "name": "web",
+        "reference": "workspace:web"
       }
     ],
     "enableTopLevelFallback": true,
     "ignorePatternData": "(^(?:\\.yarn\\/sdks(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)|$))$)",
     "fallbackExclusionList": [
-      ["web", ["workspace:."]]
+      ["monorepo-yarn2", ["workspace:."]],
+      ["web", ["workspace:web"]]
     ],
     "fallbackPool": [
     ],
@@ -37,12 +42,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {
           "packageLocation": "./",
           "packageDependencies": [
-            ["cookie-parser", "npm:1.4.5"],
-            ["debug", "virtual:3c4f7f349789d7597b53f6806dcbf71445596dd97a6a139314a632324e544d12b73623cfb0621bb9d37d8830b5ffbaf5935d9d709ca211a5a162bb877a1524e9#npm:2.6.9"],
-            ["ejs", "npm:2.6.2"],
-            ["express", "npm:4.16.4"],
-            ["http-errors", "npm:1.6.3"],
-            ["morgan", "npm:1.9.1"]
           ],
           "linkType": "SOFT",
         }]
@@ -412,6 +411,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["monorepo-yarn2", [
+        ["workspace:.", {
+          "packageLocation": "./",
+          "packageDependencies": [
+            ["monorepo-yarn2", "workspace:."]
+          ],
+          "linkType": "SOFT",
+        }]
+      ]],
       ["morgan", [
         ["npm:1.9.1", {
           "packageLocation": "./.yarn/cache/morgan-npm-1.9.1-cfe5c59dac-3ffe266d6a.zip/node_modules/morgan/",
@@ -640,10 +648,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["web", [
-        ["workspace:.", {
-          "packageLocation": "./",
+        ["workspace:web", {
+          "packageLocation": "./web/",
           "packageDependencies": [
-            ["web", "workspace:."],
+            ["web", "workspace:web"],
             ["cookie-parser", "npm:1.4.5"],
             ["debug", "virtual:3c4f7f349789d7597b53f6806dcbf71445596dd97a6a139314a632324e544d12b73623cfb0621bb9d37d8830b5ffbaf5935d9d709ca211a5a162bb877a1524e9#npm:2.6.9"],
             ["ejs", "npm:2.6.2"],
