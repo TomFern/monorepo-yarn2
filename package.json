@@ -1,0 +1,7 @@
+{
+  "name": "monorepo-yarn2",
+  "workspaces": [
+      "api",
+      "web"
+  ]
+}
