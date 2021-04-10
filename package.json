@@ -5,6 +5,7 @@
   },
   "workspaces": [
     "web",
+    "www",
     "api"
   ]
 }
