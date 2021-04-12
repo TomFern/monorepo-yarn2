@@ -1,0 +1,47 @@
+yarn set version latest
+
+yarn init
+
+https://dev.to/arcanis/introducing-yarn-2-4eh1
+
+"workspaces": [
+    "web"
+]
+
+
+Check that you don't have any yarn.lock upwards in the fs
+	
+yarn init -w
+
+
+mkdir web
+express --view=ejs web
+
+# yarn workspace web add express	
+yarn workspaces list
+
+mkdir api
+cd api
+yarn init
+yarn add graphql
+cd ..
+
+yarn plugin import workspace-tools
+
+yarn create next web
+#yarn workspace web add swr
+yarn workspace web @apollo/client graphql
+#yarn workspace web build
+#yarn workspace web start
+
+yarn workspace web dev
+
+mkdir api
+cd api
+yarn init
+wget https://raw.githubusercontent.com/trevorblades/countries/master/index.js
+scripts -> start node index.js
+cd ..
+yarn workspace countries-api add apollo-server countries-list graphql provinces sift
+
+
