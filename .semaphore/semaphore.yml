@@ -20,7 +20,7 @@ blocks:
             - 'true'
     dependencies: []
     run:
-      when: 'change_in(''/web'', { default_branch: ''main'' })'
+      when: 'change_in(''/web/'', { default_branch: ''main'' })'
   - name: API tests
     task:
       prologue:
@@ -36,13 +36,13 @@ blocks:
             - 'true'
     dependencies: []
     run:
-      when: 'change_in(''/web'', { default_branch: ''main'' })'
+      when: 'change_in(''/web/'', { default_branch: ''main'' })'
   - name: Integration tests
     dependencies:
       - API tests
       - Web tests
     run:
-      when: 'change_in([''/web'', ''/api''], { default_branch: ''main'' })'
+      when: 'change_in([''/web/'', ''/api/''], { default_branch: ''main'' })'
     task:
       jobs:
         - name: integrate
