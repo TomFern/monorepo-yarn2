@@ -15,7 +15,12 @@ blocks:
         - name: lint
           commands:
             - yarn workspace web lint
+        - name: unit test
+          commands:
+            - 'true'
     dependencies: []
+    run:
+      when: 'change_in(''/web'', { default_branch: ''main'' })'
   - name: API tests
     task:
       prologue:
@@ -26,4 +31,20 @@ blocks:
         - name: lint
           commands:
             - yarn workspace api lint
+        - name: unit test
+          commands:
+            - 'true'
     dependencies: []
+    run:
+      when: 'change_in(''/web'', { default_branch: ''main'' })'
+  - name: Integration tests
+    dependencies:
+      - API tests
+      - Web tests
+    run:
+      when: 'change_in([''/web'', ''/api''], { default_branch: ''main'' })'
+    task:
+      jobs:
+        - name: integrate
+          commands:
+            - 'true'
