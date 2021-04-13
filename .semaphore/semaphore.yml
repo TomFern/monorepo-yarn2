@@ -1,0 +1,29 @@
+version: v1.0
+name: First pipeline
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
+blocks:
+  - name: Web tests
+    task:
+      prologue:
+        commands:
+          - checkout
+          - sem-version node 15.14
+      jobs:
+        - name: lint
+          commands:
+            - yarn workspace web lint
+    dependencies: []
+  - name: API tests
+    task:
+      prologue:
+        commands:
+          - checkout
+          - sem-version node 15.14
+      jobs:
+        - name: lint
+          commands:
+            - yarn workspace api lint
+    dependencies: []
