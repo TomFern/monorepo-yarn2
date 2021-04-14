@@ -49,4 +49,16 @@ blocks:
       jobs:
         - name: integrate
           commands:
-            - 'true'
+            - yarn workspace web start &
+            - sleep 5
+            - yarn workspace web test
+      prologue:
+        commands:
+          - checkout
+          - yarn workspace api start &
+          - sleep 5
+          - yarn workspace web build
+      epilogue:
+        always:
+          commands:
+            - killall node
