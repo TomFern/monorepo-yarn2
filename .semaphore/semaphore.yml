@@ -5,33 +5,34 @@ agent:
     type: e1-standard-2
     os_image: ubuntu1804
 blocks:
-  - name: Web tests
+  - name: Frontend client
     task:
       prologue:
         commands:
           - checkout
           - sem-version node 15.14
       jobs:
-        - name: lint
+        - name: Lint
           commands:
             - yarn workspace web lint
-        - name: unit test
+        - name: Build
           commands:
-            - yarn workspace web next export
+            - source env-test
+            - yarn workspace web next build
     dependencies: []
     run:
       when: 'change_in(''/web/'', { default_branch: ''main'' })'
-  - name: API tests
+  - name: API server
     task:
       prologue:
         commands:
           - checkout
           - sem-version node 15.14
       jobs:
-        - name: lint
+        - name: Lint
           commands:
             - yarn workspace api lint
-        - name: unit test
+        - name: Unit tests
           commands:
             - yarn workspace api start &
             - sleep 5
@@ -41,13 +42,13 @@ blocks:
       when: 'change_in(''/api/'', { default_branch: ''main'' })'
   - name: Integration tests
     dependencies:
-      - API tests
-      - Web tests
+      - API server
+      - Frontend client
     run:
       when: 'change_in([''/web/'', ''/api/''], { default_branch: ''main'' })'
     task:
       jobs:
-        - name: integrate
+        - name: Test
           commands:
             - yarn workspace web start &
             - sleep 5
