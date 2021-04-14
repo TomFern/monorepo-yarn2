@@ -1,6 +1,8 @@
+// schema definition by: https://github.com/trevorblades/countries
+
 const sift = require('sift');
 const provinces = require('provinces');
-const {ApolloServer, gql} = require('apollo-server');
+const {gql} = require('apollo-server');
 const {continents, countries, languages} = require('countries-list');
 
 const typeDefs = gql`
@@ -179,16 +181,21 @@ const resolvers = {
   }
 };
 
-const server = new ApolloServer({
-  typeDefs,
-  resolvers,
-  introspection: true,
-  playground: true,
-  engine: {
-    apiKey: process.env.ENGINE_API_KEY
-  }
-});
+module.exports = {
+    typeDefs: typeDefs,
+    resolvers: resolvers
+}
 
-server.listen({port: process.env.PORT || 4000}).then(({url}) => {
-  console.log(`🚀  Server ready at ${url}`);
-});
+// const server = new ApolloServer({
+//   typeDefs,
+//   resolvers,
+//   introspection: true,
+//   playground: true,
+//   engine: {
+//     apiKey: process.env.ENGINE_API_KEY
+//   }
+// });
+
+// server.listen({port: process.env.PORT || 4000}).then(({url}) => {
+//   console.log(`🚀  Server ready at ${url}`);
+// });
