@@ -33,6 +33,8 @@ blocks:
             - yarn workspace api lint
         - name: unit test
           commands:
+            - yarn workspace api start &
+            - sleep 5
             - yarn workspace api test
     dependencies: []
     run:
