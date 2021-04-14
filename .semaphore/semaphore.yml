@@ -49,4 +49,18 @@ blocks:
       jobs:
         - name: integrate
           commands:
-            - 'true'
+            - yarn workspace web start &
+            - sleep 5
+            - yarn workspace web test
+      prologue:
+        commands:
+          - checkout
+          - sem-version node 15.14
+          - yarn workspace api start &
+          - sleep 5
+          - yarn workspace web build
+          - artifact push workflow web/.next/
+      epilogue:
+        always:
+          commands:
+            - killall node
