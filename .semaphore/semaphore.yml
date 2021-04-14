@@ -17,7 +17,7 @@ blocks:
             - yarn workspace web lint
         - name: unit test
           commands:
-            - 'true'
+            - yarn workspace web next export
     dependencies: []
     run:
       when: 'change_in(''/web/'', { default_branch: ''main'' })'
