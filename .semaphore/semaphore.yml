@@ -33,10 +33,10 @@ blocks:
             - yarn workspace api lint
         - name: unit test
           commands:
-            - 'true'
+            - yarn workspace api test
     dependencies: []
     run:
-      when: 'change_in(''/web/'', { default_branch: ''main'' })'
+      when: 'change_in(''/api/'', { default_branch: ''main'' })'
   - name: Integration tests
     dependencies:
       - API tests
