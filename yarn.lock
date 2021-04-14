@@ -1641,6 +1641,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"component-emitter@npm:^1.3.0":
+  version: 1.3.0
+  resolution: "component-emitter@npm:1.3.0"
+  checksum: fc4edbf1014f0aed88dcec33ca02d2938734e428423f640d8a3f94975615b8e8c506c19e29b93949637c5a281353e75fa79e299e0d57732f42a9fe346cb2cad6
+  languageName: node
+  linkType: hard
+
 "concat-map@npm:0.0.1":
   version: 0.0.1
   resolution: "concat-map@npm:0.0.1"
@@ -1705,6 +1712,13 @@ __metadata:
   version: 0.4.0
   resolution: "cookie@npm:0.4.0"
   checksum: 7aaef4b642c533600fdd001d963a507dfcd814267503374e51d9743475d024feeff8b0b4ddd0777a25791a2efbdfd8bc4a0fe0696104efa195e8f8584807d410
+  languageName: node
+  linkType: hard
+
+"cookiejar@npm:^2.1.2":
+  version: 2.1.2
+  resolution: "cookiejar@npm:2.1.2"
+  checksum: 4c733c15c190798bc1fb724f3044959cabc1565dee7dfc00f99219c7a4189b21cc243ccab52e0708994923f684189a4afa6b01b6b157f8c99273f1001602ac6f
   languageName: node
   linkType: hard
 
@@ -2469,6 +2483,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fast-safe-stringify@npm:^2.0.7":
+  version: 2.0.7
+  resolution: "fast-safe-stringify@npm:2.0.7"
+  checksum: 7bd22543263b707870d70c6f2336b6e8563e34d6807dc388cc0566895e31e0a8273af017a7eb1c9538d0ef54288284e1c0585b557bd856491295a847159fd929
+  languageName: node
+  linkType: hard
+
 "file-entry-cache@npm:^6.0.1":
   version: 6.0.1
   resolution: "file-entry-cache@npm:6.0.1"
@@ -2564,6 +2585,13 @@ __metadata:
     combined-stream: ^1.0.8
     mime-types: ^2.1.12
   checksum: 6574ff4d2d845c47ba288151a6e0573767eefdee9da358be199e0f0b66aa5c454e7d62ed5e0daef6f84167ba1e9596e064f36f206488e460ef449ef7b653cdfc
+  languageName: node
+  linkType: hard
+
+"formidable@npm:^1.2.2":
+  version: 1.2.2
+  resolution: "formidable@npm:1.2.2"
+  checksum: 9fe5ef38d5881ac16cc8ca78bd3229fbf32b10e0fd3b718ec20f86ea1de7302aa0ffcfa9a9163cec02fc3f825faf9d0533f24539bb20ae6d73b580b526c25edb
   languageName: node
   linkType: hard
 
@@ -3567,7 +3595,7 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"methods@npm:~1.1.2":
+"methods@npm:^1.1.2, methods@npm:~1.1.2":
   version: 1.1.2
   resolution: "methods@npm:1.1.2"
   checksum: 450e4ea0fd4a0f3de8c0593d753c7d6c8f2ee49766f5ef35c68cc2ac41699d5e295b7d6330fc2b7271b8569a07857e3eb0b5df0599a353c5808265b4b5066168
@@ -3608,6 +3636,15 @@ fsevents@~2.3.1:
   bin:
     mime: cli.js
   checksum: d540c24dd3e3a9e25e813714e55ff2f7841a3a1a47aed9786c508bd0251653d5e9abbfb1163c0c6e1be99f872d7fa1538c068bd6e306e9cb12dd9affa841a61e
+  languageName: node
+  linkType: hard
+
+"mime@npm:^2.4.6":
+  version: 2.5.2
+  resolution: "mime@npm:2.5.2"
+  bin:
+    mime: cli.js
+  checksum: 3e5377f0a1891350247699c5fff0469752a35d5c0baeb7cbee86907c143215ee8621d17c17401f10ffe020a0b327aa503b98cb7340039fce69bc465aed414fb7
   languageName: node
   linkType: hard
 
@@ -4459,6 +4496,15 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
+"qs@npm:^6.9.4":
+  version: 6.10.1
+  resolution: "qs@npm:6.10.1"
+  dependencies:
+    side-channel: ^1.0.4
+  checksum: 25e50a9107322027a998ba4eacec3df4b575c4f0a02cf0602002242d09ac997ab783384b6e90d6264a4d8387de3d17fb177d9c304a0dd9ec706a3087a069b204
+  languageName: node
+  linkType: hard
+
 "querystring-es3@npm:0.2.1, querystring-es3@npm:^0.2.0":
   version: 0.2.1
   resolution: "querystring-es3@npm:0.2.1"
@@ -4728,7 +4774,7 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"semver@npm:^7.2.1, semver@npm:^7.3.5":
+"semver@npm:^7.2.1, semver@npm:^7.3.2, semver@npm:^7.3.5":
   version: 7.3.5
   resolution: "semver@npm:7.3.5"
   dependencies:
@@ -5197,6 +5243,35 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
+"superagent@npm:^6.1.0":
+  version: 6.1.0
+  resolution: "superagent@npm:6.1.0"
+  dependencies:
+    component-emitter: ^1.3.0
+    cookiejar: ^2.1.2
+    debug: ^4.1.1
+    fast-safe-stringify: ^2.0.7
+    form-data: ^3.0.0
+    formidable: ^1.2.2
+    methods: ^1.1.2
+    mime: ^2.4.6
+    qs: ^6.9.4
+    readable-stream: ^3.6.0
+    semver: ^7.3.2
+  checksum: bc21d32d9dd1dd0e33df5f5e112e6796b010ae08d4402d61cc232de6204c8fb5aaa04ed717873c217e033fc80e7c2578aa4f1b607feec54627a5f724805c1e5b
+  languageName: node
+  linkType: hard
+
+"supertest@npm:^6.1.3":
+  version: 6.1.3
+  resolution: "supertest@npm:6.1.3"
+  dependencies:
+    methods: ^1.1.2
+    superagent: ^6.1.0
+  checksum: 4a3e07881952e54ada2b67be59a91d5222b0b36410b1f23fb363fc45a956aa5a82b7a1a9a33c90a63e3cac4222b3313d41398c85fe04d9f8a7f7757bd15b370b
+  languageName: node
+  linkType: hard
+
 "supports-color@npm:^5.3.0":
   version: 5.5.0
   resolution: "supports-color@npm:5.5.0"
@@ -5624,6 +5699,7 @@ resolve@^2.0.0-next.3:
     next: 10.1.3
     react: 17.0.2
     react-dom: 17.0.2
+    supertest: ^6.1.3
   languageName: unknown
   linkType: soft
 
