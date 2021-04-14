@@ -6,7 +6,7 @@ export async function getStaticProps() {
       query: gql`
         query Countries {
           countries {
-            name
+            name capital emoji
           }
         }
       `,
@@ -14,27 +14,19 @@ export async function getStaticProps() {
 
     return {
       props: {
-        countries: data.countries.slice(0, 4),
+        countries: data.countries,
       },
    };
 }
 
-// export async function getServerSideProps() {
-//     return {
-//         props: {
-//             countries: [{ "name" : "argentina"}, { "name": "brasil"}]
-//         }
-//     };
-// }
-
-export default function Countries({countries}) {
-    console.log(countries);
+export default function Capitals({countries}) {
     return (
         <>
+        <h1>Capitals</h1>
         <div>
           <ul>
             {countries.map((country, index) => (
-              <li>{index} 👉 {country.name}</li>
+              <li key={index} id={index}>{country.emoji} {country.name} 👉 {country.capital}</li>
             ))}
           </ul>
           </div>
